@@ -12,26 +12,30 @@ body {
             padding: 35px;
             border-radius: 16px;
             text-align: center;
+            box-sizing: border-box; /* Ensures padding doesn't break width */
         }
         .badge {
-            display: inline-flex; /* Changed to flex so we can space items */
+            display: inline-flex;
             align-items: center;
-            gap: 20px;            /* <--- Controls distance between hyperlinks */
+            justify-content: center;
+            flex-wrap: wrap;       /* Allows links to wrap gracefully on super small screens if needed */
+            gap: 40px;             /* Clean spacing between your hyperlinks */
             background: #f1f1f1;
             color: #111;
             font-size: 12px;
             font-weight: 700;
             letter-spacing: 0.5px;
-            gap: 50px;
-            padding: 8px 45px;    /* Adjusted padding to make it wider/roomier */
+            padding: 8px 25px;     /* Balanced padding so it fits well on mobile */
             border-radius: 20px;
             margin-bottom: 16px;
+            max-width: 100%;       /* Prevents it from overflowing the container */
+            box-sizing: border-box;
         }
         .badge a {
             text-decoration: none;
             color: inherit;
         }
-        .badge a:hover{
+        .badge a:hover {
             color: #1A0DAB;
             transition: 0.3s;
         }
@@ -83,7 +87,7 @@ body {
             font-size: 13px;
             line-height: 1.5;
             margin: 0 0 10px;
-            }
+        }
         .price {
             font-weight: 800;
             font-size: 14px;
@@ -130,17 +134,24 @@ body {
             color: #999;
         }
         @media (max-width: 600px) {
+            body {
+                padding: 20px 10px; /* Gives a bit more edge breathing room on small phones */
+            }
             .boxes {
                 flex-direction: column;
             }
             .container {
-                padding: 28px 20px;
+                padding: 24px 16px;
+            }
+            .badge {
+                gap: 25px; /* Slightly tighter gap on mobile screens so it doesn't overflow */
+                padding: 8px 18px;
             }
         }
-        .coming{
+        .coming {
             display: flex;
             justify-content: center;
             align-items: center;
             color: white;
-            height: 100vh
-             }
+            height: 100vh;
+        }
